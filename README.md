@@ -1,6 +1,7 @@
 # SDL2_ttf sample
 
-This project is a basic C [SDL2][SDL] project that uses [CMake][] as a build system.
+This project is a basic sample written in C that demonstrates the usage of the
+[SDL2][SDL] and [SDL2_ttf][] libraries. It uses [CMake][] as a build system.
 
 
 It could be used as a base for any SDL2 project. Just fork it, clone it and
@@ -15,23 +16,23 @@ repository.
 - C Compiler (gcc, ...)
 - [CMake][]
 - [SDL2][SDL] library
+- [SDL2_ttf][] library
 
 **On Debian/Ubuntu based distributions, use the following command:**
 
 ```sh
-sudo apt install git build-essential pkg-config cmake cmake-data libsdl2-dev
+sudo apt install git build-essential pkg-config cmake cmake-data libsdl2-dev libsdl2-ttf-dev
 ```
 
 **Optional packages:**
 
 - [SDL2_image][] library
-- [SDL2_ttf][] library
 - [SDL2_net][] library
 - [SDL2_mixer][] library
 - [SDL2_gfx][] library
 
 ```sh
-sudo apt install libsdl2-image-dev libsdl2-ttf-dev libsdl2-net-dev libsdl2-mixer-dev libsdl2-gfx-dev
+sudo apt install libsdl2-image-dev libsdl2-net-dev libsdl2-mixer-dev libsdl2-gfx-dev
 ```
 
 ## Build instructions
@@ -53,9 +54,9 @@ make
 ./sdl2-ttf-sample
 ```
 
-***Note:*** To use SDL2_image, SDL2_ttf, SDL2_net, SDL2_mixer or SDL2_gfx, you
-should uncomment some instructions in the CMakeLists.txt file and re-execute
-the `make` command.
+***Note:*** To use SDL2_image, SDL2_net, SDL2_mixer or SDL2_gfx, you should
+uncomment some instructions in the CMakeLists.txt file and re-execute the
+`make` command.
 
 ### Open the project with an IDE under Linux
 
