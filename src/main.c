@@ -32,6 +32,7 @@
 #include <stdbool.h>
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 // Define MAX and MIN macros
 #define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
@@ -41,19 +42,24 @@
 #define SCREEN_WIDTH    800
 #define SCREEN_HEIGHT   600
 
+#define FONT_PATH   "assets/pacifico/Pacifico.ttf"
+
 int main(int argc, char* argv[])
 {
     // Unused argc, argv
     (void) argc;
     (void) argv;
 
-    // Initialize SDL
+    // Initialize SDL2
     if(SDL_Init(SDL_INIT_VIDEO) < 0)
     {
-        printf("SDL could not be initialized!\n"
-               "SDL_Error: %s\n", SDL_GetError());
+        printf("SDL2 could not be initialized!\n"
+               "SDL2 Error: %s\n", SDL_GetError());
         return 0;
     }
+
+    // Initialize SDL2_ttf
+    TTF_Init();
 
 #if defined linux && SDL_VERSION_ATLEAST(2, 0, 8)
     // Disable compositor bypass
@@ -65,7 +71,7 @@ int main(int argc, char* argv[])
 #endif
 
     // Create window
-    SDL_Window *window = SDL_CreateWindow("Basic C SDL project",
+    SDL_Window *window = SDL_CreateWindow("SDL2_ttf sample",
                                           SDL_WINDOWPOS_UNDEFINED,
                                           SDL_WINDOWPOS_UNDEFINED,
                                           SCREEN_WIDTH, SCREEN_HEIGHT,
@@ -138,6 +144,9 @@ int main(int argc, char* argv[])
         // Destroy window
         SDL_DestroyWindow(window);
     }
+
+    // Quit SDL2_ttf
+    TTF_Quit();
 
     // Quit SDL
     SDL_Quit();
